@@ -29,7 +29,7 @@ app.add_middleware(
 @app.get("/lightposts")
 async def get_lightposts():
     query = """
-    SELECT light_post_id, latitude, longitude, city
+    SELECT light_id, latitude, longitude, city
     FROM light_post
     """
 
