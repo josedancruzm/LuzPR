@@ -1,0 +1,38 @@
+var map = L.map('map', {
+            maxBounds: [[17.820447, -68.012458], [18.555231, -65.111299]],
+            maxBoundsViscosity: 1.0,
+            minZoom: 10
+        }).setView([18.2, -66.5], 10);
+
+L.tileLayer('https://api.maptiler.com/maps/streets-v4/{z}/{x}/{y}.png?key=KdpEk71LcB3GnVCNZ9CR', {
+attribution: '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>',
+        }).addTo(map);
+
+fetch("http://localhost:8000/lightposts")
+    .then(res => res.json())
+    .then(data =>
+    {
+
+    //block of code that maps lightpost icon
+    var customIcon = L.icon({
+    iconUrl: 'assets/icons/lightpost_icon_ON.png',
+                    iconSize: [32, 32],
+                    iconAnchor: [16, 32],
+                    popupAnchor: [0, -32]
+ 
+        });
+
+var markers = L.markerClusterGroup({
+                    maxClusterRadius: 25
+                });
+
+data.forEach(row =>
+{
+var marker = L.marker([row.latitude, row.longitude], { icon: customIcon })
+                    //.bindPopup(row.light_post_id)
+                    // .addTo(map);
+                    markers.addLayer(marker);
+                });
+
+map.addLayer(markers);
+            });
