@@ -24,9 +24,18 @@
             fetch("http://localhost:8000/lightposts")
                 .then(res => res.json())
                 .then(data => {
+
+                    //block of code that maps lightpost icon
+                    var customIcon = L.icon({
+                        iconUrl: 'assets/icons/lightpost_icon_ON.png',
+                        iconSize: [32, 32],
+                        iconAnchor: [16, 32],
+                        popupAnchor: [0, -32]
+                    });
+
                     data.forEach(row => {
-                        L.marker([row.latitude, row.longitude])
-                            <!--.bindPopup(row.light_post_id)-->
+                        L.marker([row.latitude, row.longitude], { icon: customIcon })
+                            //.bindPopup(row.light_post_id)
                             .addTo(map);
                     });
                 });

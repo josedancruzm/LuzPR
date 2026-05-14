@@ -1,0 +1,9 @@
+Commands so that I dont forget :>
+
+
+--RUN ETL.MAIN.PY--
+cd src
+python -m etl.main
+
+--RUN REST API--
+uvicorn src.api.api:app --reload
