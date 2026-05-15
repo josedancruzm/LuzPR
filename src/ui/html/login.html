@@ -11,10 +11,13 @@
 <body>
   <div class="form-container">
 
+    <!--Text above the input boxes-->
     <div class="form-header">
       <p class="form-header--welcome">Welcome to MiLuzPR!</p>
       <p class="form-header--sign-in">Sign in</p>
     </div>
+
+    <!--The input boxes (username & password)-->
     <form class="form-box" action="map.html">
       <div class="input-group">
         <input type="text" id="username" class="input-field" placeholder=" ">
@@ -24,6 +27,8 @@
       <div class="input-group">
         <input type="password" id="password" class="input-field" placeholder=" ">
         <label for="password" class="floating-label">Password</label>
+
+        <!--eye icon toggle-->
         <div class="eye-icon" onclick="togglePassword()">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -34,15 +39,8 @@
           </svg>
         </div>
       </div>
-      <div class="input-group checkbox-group">
-        <div class="form-col remember-me">
-          <input type="checkbox" id="remember-me-checkbox" class="checkbox-field">
-          <label for="remember-me-checkbox">Remember me</label>
-        </div>
-        <div class="form-col">
-          <a href="#" class="form-link">Forgot password?</a>
-        </div>
-      </div>
+
+      <!--sign in button-->
       <button type="submit" class="form-btn form-btn--submit">
         Sign in
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
@@ -51,10 +49,16 @@
           <path d="M2 12H22" />
         </svg>
       </button>
+
+      <!--remember me / forgot password?-->
+      <div class="forgot">
+        <a href="#" class="form-link">Forgot password?</a>
+        <a href="#" class="form-link">Forgot username?</a>
+      </div>
     </form>
 
     <div class="form-bottom">
-      <p>Don't have an account? <a href="#" class="form-link">Sign up</a></p>
+      <p>New to MiLuzPR? <a href="#" class="form-link"><b>Register here.</b></a></p>
     </div>
 
   </div>
