@@ -15,7 +15,7 @@ fetch("http://localhost:8000/lightposts")
 
     //block of code that maps lightpost icon
     var customIcon = L.icon({
-    iconUrl: 'assets/icons/lightpost_icon_ON.png',
+    iconUrl: '../assets/icons/lightpost_icon_ON.png',
                     iconSize: [32, 32],
                     iconAnchor: [16, 32],
                     popupAnchor: [0, -32]
