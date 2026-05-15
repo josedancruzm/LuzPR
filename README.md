@@ -36,6 +36,8 @@ This project aims to map every light post in Puerto Rico that is under the contr
 
 The long-term goal of LuzPR is to be adopted as an official feature of MiLUMA, giving citizens a direct way to report and track faulty light posts in their community. Future improvements could include mobile support, expanding light post coverage beyond what's currently available in public datasets or maps, and reporting coverages of other utilities like traffic lights.
 
-## Contributing
+## Contributers 🏆
 
-This project is not currently open to contributions.
+### 🥇 José Cruz - 884 lightposts
+
+### 🥈 José López - 74 lightposts
