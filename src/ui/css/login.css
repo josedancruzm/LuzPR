@@ -1,0 +1,161 @@
+/*Font*/
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
+/*Colors*/
+:root {
+  --color-background: #f0f0f0;
+  --color-text: #333;
+  --color-border: #ccc;
+  --color-placeholder: #777;
+  --color-primary: #007bff;
+  --color-primary-hover: #0056b3;
+  --color-link: #1a73e8;
+  --color-divider: #ddd;
+  --color-social-hover: #f0f0f0;
+  --color-floating-label: #5f6368;
+  --color-white: #fff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "DM sans", sans-serif;
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-text)
+}
+
+.form-container {
+  position: relative;
+  background-color: white;
+  padding: 50px 40px;
+  width: 100%;
+  height: 100vh;
+}
+
+/*Welcome to MiLuzPR text*/
+.form-header--welcome {
+  margin-top: 60px;
+  color: #4e7524;
+  font-weight: 800;
+  text-align: center;
+}
+
+/*Sign in text*/
+.form-header--sign-in {
+  font-size: 32px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.form-box {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 50px;
+}
+
+.input-group {
+  position: relative;
+  display: flex;
+}
+
+.input-field {
+  height: 48px;
+  padding-inline: 14px;
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  width: 100%;
+  outline: none;
+}
+
+#password {
+  padding-right: 40;
+}
+
+.floating-label {
+  position: absolute;
+  top: 50%;
+  left: 8px;
+  transform: translateY(-50%);
+  color: var(--color-placeholder);
+  background-color: var(--color-white);
+  padding-inline: 6px;
+  transition: all .3s ease;
+  pointer-events: none;
+}
+
+.input-field:focus~.floating-label,
+.input-field:not(:placeholder-shown)~.floating-label {
+  top: 0;
+  left: 8px;
+  transform: translateY(-50%);
+  font-size: 12px;
+  color: var(--color-primary);
+}
+
+.input-field:focus {
+  border-color: var(--color-primary);
+}
+
+.input-field:not(:focus):not(:placeholder-shown)~.floating-label {
+  color: var(--color-floating-label);
+}
+
+.eye-icon {
+  position: absolute;
+  right: 15px;
+  display: flex;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.eye-icon svg {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  color: var(--color-placeholder);
+}
+
+.checkbox-group {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  font-size: 10px;
+}
+
+.remember-me {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.form-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  height: 48px;
+  background: none;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  padding-inline: 8px;
+}
+
+.form-btn--submit {
+  background-color: #17214c;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  margin-top: 20px;
+  transition: background-color .3s ease;
+}
+
+.form-bottom {
+  text-align: center;
+  margin-top: 20px;
+}
