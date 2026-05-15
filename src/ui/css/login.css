@@ -2,48 +2,71 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
 
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
   font-family: "DM sans", sans-serif;
+  margin: 5px;
 }
 
+
+
+/*header with side bar icon, project logo, and user icon*/
+.header {
+  display: flex;
+  flex-direction: row;
+}
+
+
+/*!--project logo*/
+.header h2 {
+  margin-left: 10px;
+  color: #4e7524;
+  font-weight: 100;
+  font-family: fantasy;
+}
+
+/*user icon*/
+.header .user-icon {
+  margin-left: auto;
+}
+
+.user-icon svg {
+  cursor: pointer;
+  color: #00a0cd;
+}
+
+/*contains everything froim the Welcome sign to the Register here link*/
 .form-container {
   position: relative;
   background-color: white;
-  padding: 50px 40px;
-  width: 100%;
-  height: 100vh;
+  width: 400px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.form-container * {
+  margin: 0;
 }
 
 /*Welcome to MiLuzPR text*/
-.form-header--welcome {
+.form-header .welcome {
   margin-top: 60px;
   color: #4e7524;
   font-weight: 800;
-  text-align: center;
 }
 
 /*Sign in text*/
-.form-header--sign-in {
+.form-header .sign-in {
   font-size: 32px;
-  text-align: center;
   margin-top: 20px;
 }
 
+/*contains everything from the username input box to the Register here link*/
 .form-box {
   display: flex;
   flex-direction: column;
   margin-top: 65px;
-}
-
-.input-group {
-  position: relative;
-  display: flex;
-}
-
-.input-group:first-child {
-  margin-bottom: 60px;
+  width: auto;
+  gap: 47px;
 }
 
 .input-field {
@@ -55,37 +78,13 @@
   outline: none;
 }
 
-#password {
-  padding-right: 40;
-}
-
-.floating-label {
-  position: absolute;
-  top: 50%;
-  left: 8px;
-  transform: translateY(-50%);
-  color: grey;
-  background-color: white;
-  padding-inline: 6px;
-  transition: all .3s ease;
-  pointer-events: none;
-}
-
-.input-field:focus~.floating-label,
-.input-field:not(:placeholder-shown)~.floating-label {
-  top: 0;
-  left: 8px;
-  transform: translateY(-50%);
-  font-size: 12px;
-  color: #007bff;
-}
-
 .input-field:focus {
-  border-color: #007bff;
+  border-color: #71bd2a;
 }
 
-.input-field:not(:focus):not(:placeholder-shown)~.floating-label {
-  color: #5f6368;
+.password-group {
+  position: relative;
+  display: flex;
 }
 
 .eye-icon {
@@ -108,6 +107,26 @@
   color: inherit;
 }
 
+
+/*sign in button*/
+.submit {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  height: 47px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: #17214c;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  transition: background-color .3s ease;
+  width: 100%;
+}
+
+/*forgot [blank]? links*/
 .forgot {
   display: flex;
   margin-top: 40px;
@@ -116,33 +135,25 @@
   gap: 10px;
   font-size: 14px;
   color: #2950a6;
+  text-align: left;
 }
 
-.form-btn {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  height: 47px;
-  background: none;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  padding-inline: 8px;
-}
-
-.form-btn--submit {
-  background-color: #17214c;
-  color: white;
-  font-size: 16px;
-  font-weight: 600;
-  transition: background-color .3s ease;
-  margin-top: 47px;
-}
-
-.form-bottom {
+/*register link*/
+.register {
   text-align: center;
   margin-top: 45px;
   color: #2950a6;
   font-size: 14px;
+}
+
+.footer {
+  position: fixed;
+  right: 15px;
+  bottom: 5px;
+  display: flex;
+}
+
+.language svg {
+  cursor: pointer;
+  color: #00a0cd;
 }
