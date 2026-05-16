@@ -28,11 +28,11 @@ This project aims to map every light post in Puerto Rico that is under the contr
 
 **In development:**
 
-*Light post data incomplete* 
+>*Light post data incomplete* 
 
-0/
+>*Reporting system not yet implemented.*
 
-*Reporting system not yet implemented.*
+>0/78 Municipios Completed
 
 ## Goal
 
@@ -40,6 +40,11 @@ The long-term goal of LuzPR is to be adopted as an official feature of MiLUMA, g
 
 ## Contributers 🏆
 
-### 🥇 José Cruz - 972 lightposts
+### 🥇 José Cruz - 972 light posts
+>Working on: Vega Baja, Culebra
 
-### 🥈 José López - 109 lightposts
+### 🥈 José López - 109 light posts
+>Working on: Dorado
+
+### 🥉 Name - # light posts
+>Working on: 
