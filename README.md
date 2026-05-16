@@ -40,6 +40,6 @@ The long-term goal of LuzPR is to be adopted as an official feature of MiLUMA, g
 
 ## Contributers 🏆
 
-### 🥇 José Cruz - 884 lightposts
+### 🥇 José Cruz - 972 lightposts
 
-### 🥈 José López - 74 lightposts
+### 🥈 José López - 109 lightposts
