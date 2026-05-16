@@ -28,9 +28,11 @@ This project aims to map every light post in Puerto Rico that is under the contr
 
 **In development:**
 
-- *Light post data incomplete*
+*Light post data incomplete* 
 
-- *Reporting system not yet implemented.*
+0/
+
+*Reporting system not yet implemented.*
 
 ## Goal
 
