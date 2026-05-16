@@ -3,11 +3,15 @@
 
 * {
   box-sizing: border-box;
-  font-family: "DM sans", sans-serif;
-  margin: 5px;
 }
 
+body {
+  margin: 0;
+}
 
+.header * {
+  margin: 5px;
+}
 
 /*header with side bar icon, project logo, and user icon*/
 .header {
@@ -16,7 +20,7 @@
 }
 
 
-/*!--project logo*/
+/*project logo*/
 .header h2 {
   margin-left: 10px;
   color: #4e7524;
@@ -27,24 +31,18 @@
 /*user icon*/
 .header .user-icon {
   margin-left: auto;
-}
-
-.user-icon svg {
   cursor: pointer;
   color: #00a0cd;
 }
 
 /*contains everything froim the Welcome sign to the Register here link*/
 .form-container {
+  font-family: "DM sans", sans-serif;
   position: relative;
   background-color: white;
   width: 400px;
   margin: 0 auto;
   text-align: center;
-}
-
-.form-container * {
-  margin: 0;
 }
 
 /*Welcome to MiLuzPR text*/
@@ -93,9 +91,6 @@
   display: flex;
   top: 50%;
   transform: translateY(-50%);
-}
-
-.eye-icon svg {
   width: 20px;
   height: 20px;
   cursor: pointer;

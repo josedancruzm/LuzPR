@@ -1,14 +1,18 @@
-* {
-  font-family: "DM sans", sans-serif;
-  margin: 5px;
+/*establishes the overall architecture of the page*/
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
 }
 
+/*header with side bar icon, project logo, and user icon*/
 .header {
   display: flex;
   flex-direction: row;
 }
 
-/*!--project logo*/
+/*project logo*/
 .header h2 {
   margin-left: 10px;
   color: #4e7524;
@@ -19,19 +23,23 @@
 /*user icon*/
 .header .user-icon {
   margin-left: auto;
-}
-
-.user-icon svg {
   cursor: pointer;
   color: #00a0cd;
 }
 
-#map {
-  height: 100vh;
+/*every element inside the header gets a 5px margin*/
+.header * {
+  margin: 5px;
 }
 
-.popup-footer * {
-  margin: 0;
+/*map-container takes up the remaining space in body*/
+.map-container {
+  flex: 1;
+}
+
+/*map fills up that remaining space*/
+#map {
+  height: 100%;
 }
 
 .popup-footer {

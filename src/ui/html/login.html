@@ -12,101 +12,97 @@
 
 <body>
 
-  <!--whole page container-->
-  <div class="container">
+  <!--header with side bar icon, project logo, and user icon-->
+  <div class="header">
 
-    <!--header with side bar icon, project logo, and user icon-->
-    <div class="header">
-
-      <!--side bar icon-->
-      <div class="side-bar">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-          class="lucide lucide-menu-icon lucide-menu">
-          <path d="M4 5h16" />
-          <path d="M4 12h16" />
-          <path d="M4 19h16" />
-        </svg>
-      </div>
-
-      <!--project logo-->
-      <h2>LuzPR 💡</h2>
-
-      <!--user icon-->
-      <div class="user-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-          class="lucide lucide-user-icon lucide-user">
-          <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
-          <circle cx="12" cy="7" r="4" />
-        </svg>
-      </div>
+    <!--side bar icon-->
+    <div class="side-bar">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+        class="lucide lucide-menu-icon lucide-menu">
+        <path d="M4 5h16" />
+        <path d="M4 12h16" />
+        <path d="M4 19h16" />
+      </svg>
     </div>
 
-    <!--contains everything froim the Welcome sign to the Register here link-->
-    <div class="form-container">
+    <!--project logo-->
+    <h2>LuzPR 💡</h2>
 
-      <!--Text above the input boxes-->
-      <div class="form-header">
-        <p class="welcome">Welcome to MiLuzPR!</p>
-        <p class="sign-in">Sign in</p>
-      </div>
+    <!--user icon-->
+    <div class="user-icon">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+        class="lucide lucide-user-icon lucide-user">
+        <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
+        <circle cx="12" cy="7" r="4" />
+      </svg>
+    </div>
+  </div>
 
-      <!--contains input boxes and buttons-->
-      <form class="form-box" action="map.html">
+  <!--contains everything froim the Welcome sign to the Register here link-->
+  <div class="form-container">
 
-        <input type="text" id="username" class="input-field" placeholder=" ">
+    <!--Text above the input boxes-->
+    <div class="form-header">
+      <p class="welcome">Welcome to MiLuzPR!</p>
+      <p class="sign-in">Sign in</p>
+    </div>
 
-        <div class="password-group">
-          <input type="password" id="password" class="input-field" placeholder=" ">
+    <!--contains input boxes and buttons-->
+    <form class="form-box" action="map.html">
 
-          <!--eye icon toggle-->
-          <div class="eye-icon" onclick="togglePassword()">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-              class="lucide lucide-eye-icon lucide-eye">
-              <path
-                d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0" />
-              <circle cx="12" cy="12" r="3" />
-            </svg>
-          </div>
-        </div>
+      <input type="text" id="username" class="input-field" placeholder=" ">
 
-        <!--sign in button-->
-        <button type="submit" class="submit">
-          Sign in
+      <div class="password-group">
+        <input type="password" id="password" class="input-field" placeholder=" ">
+
+        <!--eye icon toggle-->
+        <div class="eye-icon" onclick="togglePassword()">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M18 8L22 12L18 16" />
-            <path d="M2 12H22" />
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="lucide lucide-eye-icon lucide-eye">
+            <path
+              d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0" />
+            <circle cx="12" cy="12" r="3" />
           </svg>
-        </button>
-      </form>
-      <!--remember me / forgot password? / language-->
-      <div class="links">
-        <div class="forgot">
-          <a href="#" class="form-link">Forgot password?</a>
-          <a href="#" class="form-link">Forgot username?</a>
         </div>
-        <div class="register">
-          <p>New to MiLuzPR? <a href="#" class="form-link"><b>Register here.</b></a></p>
-        </div>
-
-
-
       </div>
-    </div>
 
-    <div class="footer">
-      <div class="language">
+      <!--sign in button-->
+      <button type="submit" class="submit">
+        Sign in
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-          class="lucide lucide-globe-icon lucide-globe">
-          <circle cx="12" cy="12" r="10" />
-          <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" />
-          <path d="M2 12h20" />
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M18 8L22 12L18 16" />
+          <path d="M2 12H22" />
         </svg>
+      </button>
+    </form>
+    <!--remember me / forgot password? / language-->
+    <div class="links">
+      <div class="forgot">
+        <a href="#" class="form-link">Forgot password?</a>
+        <a href="#" class="form-link">Forgot username?</a>
       </div>
+      <div class="register">
+        <p>New to MiLuzPR? <a href="#" class="form-link"><b>Register here.</b></a></p>
+      </div>
+
+
+
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="language">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+        class="lucide lucide-globe-icon lucide-globe">
+        <circle cx="12" cy="12" r="10" />
+        <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" />
+        <path d="M2 12h20" />
+      </svg>
     </div>
   </div>
   <script src="../js/login.js"></script>
