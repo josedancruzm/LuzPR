@@ -1,17 +1,12 @@
-body {
-  background: white;
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  margin: 0;
-  padding: 4px;
+* {
+  font-family: "DM sans", sans-serif;
+  margin: 5px;
 }
 
 .header {
   display: flex;
   flex-direction: row;
 }
-
 
 /*!--project logo*/
 .header h2 {
@@ -31,34 +26,12 @@ body {
   color: #00a0cd;
 }
 
-#content {
-  display: flex;
-  flex: 1;
-  min-height: 0;
-}
-
-#sidebar {
-  background: linear-gradient(180deg, #93d952 2%, #27C1DC 56%, #0087BD 100%);
-  border-radius: 8px;
-  flex-shrink: 0;
-  margin-bottom: 8px;
-  padding: 1rem;
-  width: 200px;
-}
-
-#sidebar a {
-  color: #17214c;
-  font-family: fantasy;
-  font-size: 1rem;
-}
-
 #map {
-  border-radius: 8px;
-  flex: 1;
-  height: auto;
-  margin-bottom: 8px;
-  margin-left: 4px;
-  min-height: 0;
+  height: 100vh;
+}
+
+.popup-footer * {
+  margin: 0;
 }
 
 .popup-footer {
