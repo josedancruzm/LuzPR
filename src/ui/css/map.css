@@ -47,6 +47,54 @@ body {
   justify-content: flex-end;
   align-items: center;
   margin-top: 6px;
+
+}
+
+#report-dialog {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  border-radius: 12px;
+  border: none;
+}
+
+#report-dialog h2 {
+  margin-left: 10px;
+  color: #4e7524;
+  font-weight: 100;
+  font-family: fantasy;
+  text-align: center;
+  margin: 0;
+}
+
+#report-dialog fieldset {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 10px 16px;
+  margin: 12px 0;
+}
+
+#report-dialog legend {
+  font-size: 0.85rem;
+  color: #555;
+  padding: 0 4px;
+}
+
+#report-dialog fieldset label {
+  display: block;
+  margin: 8px 0;
+  cursor: pointer;
+  font-size: 0.95rem;
+}
+
+#report-dialog fieldset input {
+  margin-right: 8px;
+  accent-color: #4e7524;
+}
+
+.report-dialog-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 8px;
 }
 
 .popup-footer svg {

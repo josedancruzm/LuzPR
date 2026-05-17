@@ -58,4 +58,8 @@ function closeReportDialog() {
 }
 
 //when you click outside of the modal, close the modal
-dialog.addEventListener("click", () => dialog.close())
+dialog.addEventListener("click", (e) => {
+    const rect = dialog.getBoundingClientRect()
+    if (e.clientX < rect.left || e.clientX > rect.right || e.clientY < rect.top || e.clientY > rect.bottom)
+        dialog.close()
+})
