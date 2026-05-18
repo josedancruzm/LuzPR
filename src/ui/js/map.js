@@ -8,36 +8,45 @@ L.tileLayer('https://api.maptiler.com/maps/streets-v4/{z}/{x}/{y}.png?key=KdpEk7
     attribution: '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>',
 }).addTo(map);
 
+var defaultIcon = L.icon({
+    iconUrl: '../assets/icons/lightpost_icon_ON.png',
+    iconSize: [32, 32],
+    iconAnchor: [16, 32],
+    popupAnchor: [0, -32]
+});
+
+var reportedIcon = L.icon({
+    iconUrl: '../assets/icons/lightpost_icon_OFF.png',
+    iconSize: [32, 32],
+    iconAnchor: [16, 32],
+    popupAnchor: [0, -32]
+});
+
 fetch("http://localhost:8000/lightposts")
     .then(res => res.json())
     .then(data => {
-
-        //block of code that maps lightpost icon
-        var customIcon = L.icon({
-            iconUrl: '../assets/icons/lightpost_icon_ON.png',
-            iconSize: [32, 32],
-            iconAnchor: [16, 32],
-            popupAnchor: [0, -32]
-
-        });
 
         var markers = L.markerClusterGroup({
             maxClusterRadius: 25
         });
 
         data.forEach(row => {
-            var marker = L.marker([row.latitude, row.longitude], { icon: customIcon })
-            marker.bindPopup(`
+            var marker = L.marker([row.latitude, row.longitude], { icon: defaultIcon })
+            var popup = L.popup().setContent(`
                 <b>ID:</b> ${row.light_id}<br>
                 <b>Coordinates:</b> ${row.longitude}, ${row.latitude}<br>
                 <b>City:</b> ${row.city}<br>
 
                 <div class="popup-footer">
-                    <span title="Report">    
-                        <svg onclick="showReportDialog()" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-flag-icon lucide-flag"><path d="M4 22V4a1 1 0 0 1 .4-.8A6 6 0 0 1 8 2c3 0 5 2 7.333 2q2 0 3.067-.8A1 1 0 0 1 20 4v10a1 1 0 0 1-.4.8A6 6 0 0 1 16 16c-3 0-5-2-8-2a6 6 0 0 0-4 1.528"/></svg>
+                    <span title="Report">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-flag-icon lucide-flag"><path d="M4 22V4a1 1 0 0 1 .4-.8A6 6 0 0 1 8 2c3 0 5 2 7.333 2q2 0 3.067-.8A1 1 0 0 1 20 4v10a1 1 0 0 1-.4.8A6 6 0 0 1 16 16c-3 0-5-2-8-2a6 6 0 0 0-4 1.528"/></svg>
                     </span>
                 </div>
             `);
+            popup.on("add", () => {
+                popup.getElement().querySelector(".lucide-flag").addEventListener("click", () => showReportDialog(marker));
+            });
+            marker.bindPopup(popup);
             markers.addLayer(marker);
         });
 
@@ -48,8 +57,11 @@ fetch("http://localhost:8000/lightposts")
 const reportDialog = document.getElementById("report-dialog")
 const receiptDialog = document.getElementById("receipt-dialog")
 
+let activeMarker = null
+
 //opens report dialog
-function showReportDialog() {
+function showReportDialog(marker) {
+    activeMarker = marker
     reportDialog.showModal()
 }
 
@@ -73,6 +85,7 @@ document.getElementById("report-form").addEventListener("submit", (e) => {
     e.preventDefault()
     const ticketNum = Math.floor(100000 + Math.random() * 900000)
     document.getElementById("receipt-message").textContent = `Ticket #${ticketNum} submitted.`
+    if (activeMarker) activeMarker.setIcon(reportedIcon)
     reportDialog.close()
     receiptDialog.showModal()
 })
