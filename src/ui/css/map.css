@@ -4,6 +4,7 @@ body {
   display: flex;
   flex-direction: column;
   height: 100vh;
+  font-family: "DM sans", sans-serif;
 }
 
 /*header with side bar icon, project logo, and user icon*/
@@ -15,9 +16,6 @@ body {
 /*project logo*/
 .header h2 {
   margin-left: 10px;
-  color: #4e7524;
-  font-weight: 100;
-  font-family: fantasy;
 }
 
 /*user icon*/
@@ -25,6 +23,12 @@ body {
   margin-left: auto;
   cursor: pointer;
   color: #00a0cd;
+}
+
+h2 {
+  color: #4e7524;
+  font-weight: 100;
+  font-family: fantasy;
 }
 
 /*every element inside the header gets a 5px margin*/
@@ -42,6 +46,7 @@ body {
   height: 100%;
 }
 
+/*space where report icon will be*/
 .popup-footer {
   display: flex;
   justify-content: flex-end;
@@ -50,21 +55,33 @@ body {
 
 }
 
-#report-dialog {
+/*report icon parameters*/
+.popup-footer svg {
+  width: 20px;
+  height: 20px;
+  color: red;
+  cursor: pointer;
+}
+
+/*---REPORT DIALOG CUSTOMIZATIONS---*/
+
+/*overall modal*/
+#report-dialog,
+#receipt-dialog {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
   border-radius: 12px;
   border: none;
+  position: relative;
 }
 
-#report-dialog h2 {
+/*header in report modal ("Report Form)*/
+dialog h2 {
   margin-left: 10px;
-  color: #4e7524;
-  font-weight: 100;
-  font-family: fantasy;
   text-align: center;
   margin: 0;
 }
 
+/*customizes the surroundings of the check marks*/
 #report-dialog fieldset {
   border: 1px solid #ccc;
   border-radius: 8px;
@@ -78,6 +95,7 @@ body {
   padding: 0 4px;
 }
 
+/*customizes check-box markers*/
 #report-dialog fieldset label {
   display: block;
   margin: 8px 0;
@@ -97,9 +115,25 @@ body {
   margin-top: 8px;
 }
 
-.popup-footer svg {
-  width: 20px;
-  height: 20px;
-  color: red;
+.report-dialog-buttons svg {
+  position: absolute;
+  right: 12px;
+  top: 12px;
+  cursor: pointer;
+}
+
+/*---RECEIPT DIALOG CUSTOMIZATIONS---*/
+
+#receipt-dialog h3 {
+  font-weight: bold;
+  margin-left: 10px;
+  text-align: center;
+  margin: 10px;
+}
+
+.receipt-dialog-buttons svg {
+  position: absolute;
+  right: 12px;
+  top: 12px;
   cursor: pointer;
 }

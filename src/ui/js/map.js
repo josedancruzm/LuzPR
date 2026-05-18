@@ -44,22 +44,35 @@ fetch("http://localhost:8000/lightposts")
         map.addLayer(markers);
     });
 
-//function declaration to create modal
-const dialog = document.getElementById("report-dialog")
+//function declaration to create modal(s)
+const reportDialog = document.getElementById("report-dialog")
+const receiptDialog = document.getElementById("receipt-dialog")
 
-//opens modal
+//opens report dialog
 function showReportDialog() {
-    dialog.showModal()
+    reportDialog.showModal()
 }
 
-//closes modal
+//closes report dialog
 function closeReportDialog() {
-    dialog.close()
+    reportDialog.close()
+}
+
+function closeReceiptDialog() {
+    receiptDialog.close()
 }
 
 //when you click outside of the modal, close the modal
-dialog.addEventListener("click", (e) => {
-    const rect = dialog.getBoundingClientRect()
+reportDialog.addEventListener("click", (e) => {
+    const rect = reportDialog.getBoundingClientRect()
     if (e.clientX < rect.left || e.clientX > rect.right || e.clientY < rect.top || e.clientY > rect.bottom)
-        dialog.close()
+        reportDialog.close()
+})
+
+document.getElementById("report-form").addEventListener("submit", (e) => {
+    e.preventDefault()
+    const ticketNum = Math.floor(100000 + Math.random() * 900000)
+    document.getElementById("receipt-message").textContent = `Ticket #${ticketNum} submitted.`
+    reportDialog.close()
+    receiptDialog.showModal()
 })

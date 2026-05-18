@@ -51,25 +51,41 @@
 
     <!--modal for reporting-->
     <dialog id="report-dialog">
-        <h2>LuzPR 💡</h2>
         <h2>Report Form</h2>
-        <form>
+        <form id="report-form">
             <fieldset>
                 <legend>What's the issue?</legend>
                 <label><input type="checkbox" name="reason" value="out"> Light is out / broken</label>
                 <label><input type="checkbox" name="reason" value="flickering"> Light is flickering</label>
-                <label><input type="checkbox" name="reason" value="damaged"> Damaged pole/fixture</label>
+                <label><input type="checkbox" name="reason" value="damaged"> Damaged pole / fixture</label>
                 <label><input type="checkbox" name="reason" value="other"> Other <input type="text"></label>
             </fieldset>
             <div class="report-dialog-buttons">
-                <button>Submit</button>
-                <button onclick="closeReportDialog()" type="button">Cancel</button>
+                <button type="submit">Submit</button>
+                <svg onclick="closeReportDialog()" type="button" xmlns="http://www.w3.org/2000/svg" width="24"
+                    height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x-icon lucide-x">
+                    <path d="M18 6 6 18" />
+                    <path d="m6 6 12 12" />
+                </svg>
             </div>
         </form>
     </dialog>
 
-
-
+    <!--modal for receipt-->
+    <dialog id="receipt-dialog">
+        <h2>Report Form</h2>
+        <h3>Success!</h3>
+        <p id="receipt-message"></p>
+        <div class="receipt-dialog-buttons">
+            <svg onclick="closeReceiptDialog()" type="button" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" class="lucide lucide-x-icon lucide-x">
+                <path d="M18 6 6 18" />
+                <path d="m6 6 12 12" />
+            </svg>
+        </div>
+    </dialog>
 
     <script src="../js/map.js"></script>
 
