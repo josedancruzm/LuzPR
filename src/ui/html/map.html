@@ -13,6 +13,7 @@
     <script src="https://unpkg.com/leaflet.markercluster/dist/leaflet.markercluster.js"></script>
     <link rel="stylesheet" href="../css/map.css">
     <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/modal.css">
 </head>
 
 <body>
@@ -49,6 +50,41 @@
     <div class="map-container">
         <div id="map"></div>
     </div>
+
+    <!-- Modal Section --------------------------------------------------------------------->
+
+    <!--modal for street light details-->
+    <dialog id="details-dialog">
+        <div class="header">
+
+            <div class="icon-circle">
+                <!--report flag-->
+                <svg class="btn-report" onclick="openReportDialog()" type="button" xmlns="http://www.w3.org/2000/svg"
+                    width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round"
+                    class="lucide lucide-flag-triangle-right-icon lucide-flag-triangle-right">
+                    <path d="M6 22V2.8a.8.8 0 0 1 1.17-.71l11.38 5.69a.8.8 0 0 1 0 1.44L6 15.5" />
+                </svg>
+            </div>
+
+            <div class="icon-circle">
+                <!--x close-->
+                <svg class="btn-close" onclick="closeDetailsDialog()" type="button" xmlns="http://www.w3.org/2000/svg"
+                    width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x-icon lucide-x">
+                    <path d="M18 6 6 18" />
+                    <path d="m6 6 12 12" />
+                </svg>
+            </div>
+
+        </div>
+
+        <div class="body">
+            <b>ID:</b> <span id="detail-id"></span><br>
+            <b>Coordinates:</b> <span id="detail-coords"></span><br>
+            <b>City:</b> <span id="detail-city"></span><br>
+        </div>
+    </dialog>
 
     <!--modal for reporting-->
     <dialog id="report-dialog">

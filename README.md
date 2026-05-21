@@ -12,11 +12,6 @@ One of the many public facilities that face recurring power outages is our stree
 
 This project aims to map every light post in Puerto Rico that is under the control of LUMA, allowing the user to more accurately and directly report any faulty one. When confirmed that the light post is faulty, it will marked as inactive on the map. The user will then be able to track their report on their page. To avoid false reports, only verified MiLuma account holders can submit them, taking advantage of LUMA's existing authentication process, while the public can still see the overall map.
 
-## Screenshot(s)
-
-![Mock Home Page](image.png)
-**Figure 1: Mock Home Page**
-
 ## Tech Stack
 
 - **Frontend:** HTML, CSS, JavaScript, Leaflet.js
@@ -47,4 +42,11 @@ The long-term goal of LuzPR is to be adopted as an official feature of MiLUMA, g
 >Working on: Dorado
 
 ### 🥉 Name - # light posts
->Working on: 
+>Working on:
+
+## Resources
+
+### SVG Icon Library:
+>https://lucide.dev/
+
+

@@ -1,0 +1,105 @@
+/* ─ Report Configuration ────────────────────────────────── */
+
+/*overall modal*/
+#report-dialog,
+#receipt-dialog,
+#details-dialog {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  border-radius: 12px;
+  border: none;
+  position: relative;
+}
+
+/*header in report modal ("Report Form)*/
+dialog h2 {
+  text-align: center;
+  margin: 0;
+}
+
+/*customizes the surroundings of the check marks*/
+#report-dialog fieldset {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 10px 16px;
+  margin: 12px 0;
+}
+
+#report-dialog legend {
+  font-size: 0.85rem;
+  color: #555;
+  padding: 0 4px;
+}
+
+/*customizes check-box markers*/
+#report-dialog fieldset label {
+  display: block;
+  margin: 8px 0;
+  cursor: pointer;
+  font-size: 0.95rem;
+}
+
+#report-dialog fieldset input {
+  margin-right: 8px;
+  accent-color: #4e7524;
+}
+
+.report-dialog-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.report-dialog-buttons svg {
+  position: absolute;
+  right: 12px;
+  top: 12px;
+  cursor: pointer;
+}
+
+/* ─ Receipt Configuration ────────────────────────────────── */
+#receipt-dialog h3 {
+  font-weight: bold;
+  margin-left: 10px;
+  text-align: center;
+  margin: 10px;
+}
+
+.receipt-dialog-buttons svg {
+  position: absolute;
+  right: 12px;
+  top: 12px;
+  cursor: pointer;
+}
+
+
+/* ─ Details Configuration ────────────────────────────────── */
+#details-dialog .header {
+  display: flex;
+  flex-direction: row;
+}
+
+/*size parameters of svg icons*/
+#details-dialog .header .btn-report,
+.btn-close {
+  height: 20px;
+  width: 20px;
+}
+
+/*size parameters of surrounding circle button*/
+#details-dialog .header .icon-circle {
+  height: 22px;
+  width: 22px;
+}
+
+.icon-circle .btn-close {
+  background-color: var(--close-btn);
+  border-radius: 50%;
+  border: 1px solid red;
+}
+
+.icon-circle .btn-report {
+  background-color: var(--report-btn);
+  border-radius: 50%;
+  border: 1px solid rgb(255, 208, 0);
+}

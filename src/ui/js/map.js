@@ -32,21 +32,7 @@ fetch("http://localhost:8000/lightposts")
 
         data.forEach(row => {
             var marker = L.marker([row.latitude, row.longitude], { icon: defaultIcon })
-            var popup = L.popup().setContent(`
-                <b>ID:</b> ${row.light_id}<br>
-                <b>Coordinates:</b> ${row.longitude}, ${row.latitude}<br>
-                <b>City:</b> ${row.city}<br>
-
-                <div class="popup-footer">
-                    <span title="Report">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-flag-icon lucide-flag"><path d="M4 22V4a1 1 0 0 1 .4-.8A6 6 0 0 1 8 2c3 0 5 2 7.333 2q2 0 3.067-.8A1 1 0 0 1 20 4v10a1 1 0 0 1-.4.8A6 6 0 0 1 16 16c-3 0-5-2-8-2a6 6 0 0 0-4 1.528"/></svg>
-                    </span>
-                </div>
-            `);
-            popup.on("add", () => {
-                popup.getElement().querySelector(".lucide-flag").addEventListener("click", () => showReportDialog(marker));
-            });
-            marker.bindPopup(popup);
+                .on('click', () => openDetailsDialog(row))
             markers.addLayer(marker);
         });
 
@@ -56,11 +42,12 @@ fetch("http://localhost:8000/lightposts")
 //function declaration to create modal(s)
 const reportDialog = document.getElementById("report-dialog")
 const receiptDialog = document.getElementById("receipt-dialog")
+const detailsDialog = document.getElementById("details-dialog")
 
 let activeMarker = null
 
 //opens report dialog
-function showReportDialog(marker) {
+function openReportDialog(marker) {
     activeMarker = marker
     reportDialog.showModal()
 }
@@ -74,11 +61,31 @@ function closeReceiptDialog() {
     receiptDialog.close()
 }
 
+function openDetailsDialog() {
+    detailsDialog.showModal()
+}
+
+function closeDetailsDialog() {
+    detailsDialog.close()
+}
+
 //when you click outside of the modal, close the modal
-reportDialog.addEventListener("click", (e) => {
+function addClickOutsideToClose(dialog) {
+    dialog.addEventListener("click", (e) => {
+        const rect = dialog.getBoundingClientRect()
+        if (e.clientX < rect.left || e.clientX > rect.right || e.clientY < rect.top || e.clientY > rect.bottom)
+            dialog.close()
+    })
+}
+
+addClickOutsideToClose(reportDialog)
+addClickOutsideToClose(receiptDialog)
+addClickOutsideToClose(detailsDialog)
+
+dialog.addEventListener("click", (e) => {
     const rect = reportDialog.getBoundingClientRect()
     if (e.clientX < rect.left || e.clientX > rect.right || e.clientY < rect.top || e.clientY > rect.bottom)
-        reportDialog.close()
+        universalDialog.close()
 })
 
 document.getElementById("report-form").addEventListener("submit", (e) => {
@@ -89,3 +96,10 @@ document.getElementById("report-form").addEventListener("submit", (e) => {
     reportDialog.close()
     receiptDialog.showModal()
 })
+
+function openDetailsDialog(row) {
+    document.getElementById("detail-id").textContent = row.light_id;
+    document.getElementById("detail-coords").textContent = `${row.longitude}, ${row.latitude}`;
+    document.getElementById("detail-city").textContent = row.city;
+    detailsDialog.showModal();
+}
