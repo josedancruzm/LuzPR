@@ -15,7 +15,6 @@
   justify-content: flex-end;
   align-items: center;
   margin-top: 6px;
-
 }
 
 /*report icon parameters*/
@@ -39,7 +38,6 @@
 
 /*header in report modal ("Report Form)*/
 dialog h2 {
-  margin-left: 10px;
   text-align: center;
   margin: 0;
 }
