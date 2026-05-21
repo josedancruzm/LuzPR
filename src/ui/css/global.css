@@ -1,0 +1,56 @@
+/*global properties*/
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
+/* ─ Color Library ────────────────────────────────── */
+:root {
+  --logo: #4e7524;
+  --icon: #00a0cd;
+  --link: #2950a6;
+  --white: #ffffff;
+}
+
+/* ─ Body Configuration ────────────────────────────────── */
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  font-family: "DM sans", sans-serif;
+}
+
+/* ─ Header ────────────────────────────────── */
+.header * {
+  margin: 5px;
+}
+
+/*header with side bar icon, project logo, and user icon*/
+.header {
+  display: flex;
+  flex-direction: row;
+}
+
+/*user icon*/
+.header .user-icon {
+  margin-left: auto;
+  cursor: pointer;
+  color: #00a0cd;
+}
+
+/*project logo*/
+.header h2 {
+  margin-left: 10px;
+  color: var(--logo);
+  font-weight: 100;
+  font-family: fantasy;
+}
+
+/* ─ Footer ────────────────────────────────── */
+
+.footer {
+  position: fixed;
+  right: 15px;
+  bottom: 5px;
+  display: flex;
+  cursor: pointer;
+  color: var(--icon);
+}

@@ -1,40 +1,4 @@
-/*establishes the overall architecture of the page*/
-body {
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  font-family: "DM sans", sans-serif;
-}
-
-/*header with side bar icon, project logo, and user icon*/
-.header {
-  display: flex;
-  flex-direction: row;
-}
-
-/*project logo*/
-.header h2 {
-  margin-left: 10px;
-}
-
-/*user icon*/
-.header .user-icon {
-  margin-left: auto;
-  cursor: pointer;
-  color: #00a0cd;
-}
-
-h2 {
-  color: #4e7524;
-  font-weight: 100;
-  font-family: fantasy;
-}
-
-/*every element inside the header gets a 5px margin*/
-.header * {
-  margin: 5px;
-}
+/* ─ Map Configuration ────────────────────────────────── */
 
 /*map-container takes up the remaining space in body*/
 .map-container {
@@ -46,7 +10,6 @@ h2 {
   height: 100%;
 }
 
-/*space where report icon will be*/
 .popup-footer {
   display: flex;
   justify-content: flex-end;
@@ -63,7 +26,7 @@ h2 {
   cursor: pointer;
 }
 
-/*---REPORT DIALOG CUSTOMIZATIONS---*/
+/* ─ Report Configuration ────────────────────────────────── */
 
 /*overall modal*/
 #report-dialog,
@@ -122,8 +85,7 @@ dialog h2 {
   cursor: pointer;
 }
 
-/*---RECEIPT DIALOG CUSTOMIZATIONS---*/
-
+/* ─ Receipt Configuration ────────────────────────────────── */
 #receipt-dialog h3 {
   font-weight: bold;
   margin-left: 10px;
