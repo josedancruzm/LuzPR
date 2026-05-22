@@ -82,21 +82,6 @@ addClickOutsideToClose(reportDialog)
 addClickOutsideToClose(receiptDialog)
 addClickOutsideToClose(detailsDialog)
 
-dialog.addEventListener("click", (e) => {
-    const rect = reportDialog.getBoundingClientRect()
-    if (e.clientX < rect.left || e.clientX > rect.right || e.clientY < rect.top || e.clientY > rect.bottom)
-        universalDialog.close()
-})
-
-document.getElementById("report-form").addEventListener("submit", (e) => {
-    e.preventDefault()
-    const ticketNum = Math.floor(100000 + Math.random() * 900000)
-    document.getElementById("receipt-message").textContent = `Ticket #${ticketNum} submitted.`
-    if (activeMarker) activeMarker.setIcon(reportedIcon)
-    reportDialog.close()
-    receiptDialog.showModal()
-})
-
 function openDetailsDialog(row) {
     document.getElementById("detail-id").textContent = row.light_id;
     document.getElementById("detail-coords").textContent = `${row.longitude}, ${row.latitude}`;

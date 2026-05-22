@@ -74,32 +74,40 @@ dialog h2 {
 
 
 /* ─ Details Configuration ────────────────────────────────── */
+#details-dialog {
+  padding: 0;
+}
+
+#details-dialog .body {
+  padding: 16px;
+}
+
 #details-dialog .header {
   display: flex;
   flex-direction: row;
-}
-
-/*size parameters of svg icons*/
-#details-dialog .header .btn-report,
-.btn-close {
-  height: 20px;
-  width: 20px;
+  justify-content: right;
+  align-items: center;
+  height: 30px;
+  overflow: hidden;
+  background-color: var(--grey-accent);
 }
 
 /*size parameters of surrounding circle button*/
 #details-dialog .header .icon-circle {
   height: 22px;
   width: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
 }
 
-.icon-circle .btn-close {
+.icon-circle .btn-close-circle {
   background-color: var(--close-btn);
-  border-radius: 50%;
   border: 1px solid red;
 }
 
-.icon-circle .btn-report {
+.icon-circle .btn-report-circle {
   background-color: var(--report-btn);
-  border-radius: 50%;
   border: 1px solid rgb(255, 208, 0);
 }
