@@ -10,6 +10,7 @@
   --grey-accent: #dbdbdb;
   --close-btn: rgb(255, 77, 77);
   --report-btn: rgb(255, 186, 58);
+  --submit-btn: rgb(74, 255, 74);
 }
 
 /* ─ Body Configuration ────────────────────────────────── */
@@ -51,7 +52,7 @@ body>.header * {
 
 /* ─ Footer ────────────────────────────────── */
 
-.footer {
+body>.footer {
   position: fixed;
   right: 15px;
   bottom: 5px;
