@@ -88,25 +88,35 @@
 
     <!--modal for reporting-->
     <dialog id="report-dialog">
-        <h2>Report Form</h2>
-        <form id="report-form">
-            <fieldset>
-                <legend>What's the issue?</legend>
-                <label><input type="checkbox" name="reason" value="out"> Light is out / broken</label>
-                <label><input type="checkbox" name="reason" value="flickering"> Light is flickering</label>
-                <label><input type="checkbox" name="reason" value="damaged"> Damaged pole / fixture</label>
-                <label><input type="checkbox" name="reason" value="other"> Other <input type="text"></label>
-            </fieldset>
-            <div class="report-dialog-buttons">
-                <button type="submit">Submit</button>
-                <svg onclick="closeReportDialog()" type="button" xmlns="http://www.w3.org/2000/svg" width="24"
-                    height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                    stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x-icon lucide-x">
+        <div class="header">
+            <!--x close-->
+            <div class="icon-circle btn-close" title="Close" onclick="closeReportDialog()" type="button">
+
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="lucide lucide-x-icon lucide-x">
                     <path d="M18 6 6 18" />
                     <path d="m6 6 12 12" />
                 </svg>
             </div>
-        </form>
+        </div>
+
+        <div class="body">
+            <h2>Report Form</h2>
+            <form id="report-form">
+                <fieldset>
+                    <legend>What's the issue?</legend>
+                    <label><input type="checkbox" name="reason" value="out"> Light is out / broken</label>
+                    <label><input type="checkbox" name="reason" value="flickering"> Light is flickering</label>
+                    <label><input type="checkbox" name="reason" value="damaged"> Damaged pole / fixture</label>
+                    <label><input type="checkbox" name="reason" value="other"> Other <input type="text"></label>
+                </fieldset>
+                <div class="report-dialog-buttons">
+                    <button type="submit">Submit</button>
+                </div>
+            </form>
+
+        </div>
     </dialog>
 
     <!--modal for receipt-->

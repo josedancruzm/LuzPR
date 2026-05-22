@@ -7,7 +7,7 @@
   --icon: #00a0cd;
   --link: #2950a6;
   --white: #ffffff;
-  --grey-accent: #d1d1d1;
+  --grey-accent: #dbdbdb;
   --close-btn: rgb(255, 77, 77);
   --report-btn: rgb(255, 222, 77);
 }
@@ -29,7 +29,7 @@ h2 {
   font-family: fantasy;
 }
 
-body > .header * {
+body>.header * {
   margin: 5px;
 }
 

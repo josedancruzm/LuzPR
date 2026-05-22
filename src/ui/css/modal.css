@@ -1,16 +1,62 @@
-/* ─ Report Configuration ────────────────────────────────── */
-
-/*overall modal*/
-#report-dialog,
-#receipt-dialog,
-#details-dialog {
+/* ─ Universal Modal Configuration ────────────────────────────────── */
+dialog {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5),
     inset 0 2px 0 rgba(255, 255, 255, 0.15),
     inset 0 -2px 4px rgba(0, 0, 0, 0.2);
   border-radius: 12px;
   border: none;
   position: relative;
+  padding: 0;
 }
+
+dialog .body {
+  padding: 16px;
+}
+
+dialog .header {
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
+  align-items: center;
+  height: 30px;
+  overflow: hidden;
+  background-color: var(--grey-accent);
+  box-shadow: inset 0 -2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/*size parameters of surrounding circle button*/
+.icon-circle {
+  height: 22px;
+  width: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 4px;
+  gap: 8px;
+  border-radius: 50%;
+
+  box-shadow: inset 0 -1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.btn-close {
+  background-color: var(--close-btn);
+  color: rgb(109, 0, 0);
+}
+
+.btn-report {
+  background-color: var(--report-btn);
+  color: rgb(190, 156, 0);
+}
+
+.icon-circle svg {
+  height: 20px;
+  width: 20px;
+}
+
+/* ─ Report Configuration ────────────────────────────────── */
+
+/*overall modal*/
+
 
 /*header in report modal ("Report Form)*/
 dialog h2 {
@@ -76,50 +122,3 @@ dialog h2 {
 
 
 /* ─ Details Configuration ────────────────────────────────── */
-#details-dialog {
-  padding: 0;
-}
-
-#details-dialog .body {
-  padding: 16px;
-}
-
-#details-dialog .header {
-  display: flex;
-  flex-direction: row;
-  justify-content: right;
-  align-items: center;
-  height: 30px;
-  overflow: hidden;
-  background-color: var(--grey-accent);
-  box-shadow: inset 0 -2px 4px rgba(0, 0, 0, 0.2);
-}
-
-/*size parameters of surrounding circle button*/
-#details-dialog .header .icon-circle {
-  height: 22px;
-  width: 22px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-right: 4px;
-  gap: 8px;
-  border-radius: 50%;
-
-  box-shadow: inset 0 -1px 2px rgba(0, 0, 0, 0.2);
-}
-
-.btn-close {
-  background-color: var(--close-btn);
-  color: rgb(109, 0, 0);
-}
-
-.btn-report {
-  background-color: var(--report-btn);
-  color: rgb(190, 156, 0);
-}
-
-.icon-circle svg {
-  height: 20px;
-  width: 20px;
-}
