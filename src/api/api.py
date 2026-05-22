@@ -29,21 +29,21 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-@app.get("/lightposts")
-async def get_lightposts():
+@app.get("/streetlights")
+async def get_streetlights():
     query = """
     SELECT light_id, latitude, longitude, city
-    FROM light_post
+    FROM street_light
     """
 
     rows = await database.fetch_all(query)
     return [dict(row) for row in rows]
 
-@app.get("/lightposts/city/{city}")
-async def get_lightpost_by_city(city: str):
+@app.get("/streetlights/city/{city}")
+async def get_streetlight_by_city(city: str):
     query = """
     SELECT light_id, latitude, longitude, city
-    FROM light_post
+    FROM street_light
     WHERE city = :city"""
 
     rows = await database.fetch_all(query,values={"city":city})

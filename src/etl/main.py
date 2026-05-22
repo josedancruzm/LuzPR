@@ -8,7 +8,7 @@ BASE_DIR = Path(__file__).resolve().parent
 DATA_DIR = BASE_DIR / "data"
 
 LAYER_TABLE_MAP = {
-    "lightpost": "light_post",
+    "streetlight": "street_light",
     "trafficlight": "traffic_light",
     "firehydrant": "fire_hydrant",
 }
@@ -25,7 +25,7 @@ def ETL_main(cur):
 
         layers = list_layers(file)
         for layer, _ in layers:
-            layer_ref = layer.split("_")[1].lower() #splitting to get the utility, like lightpost, firehydrant, etc
+            layer_ref = layer.split("_")[1].lower() #splitting to get the utility, like streetlight, firehydrant, etc
             table = LAYER_TABLE_MAP.get(layer_ref)
 
             if table is None:

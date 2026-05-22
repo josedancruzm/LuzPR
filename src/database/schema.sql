@@ -1,4 +1,4 @@
-CREATE TABLE light_post (
+CREATE TABLE street_light (
     light_id      BIGSERIAL PRIMARY KEY,
     city          TEXT,
     latitude      DOUBLE PRECISION,
@@ -31,7 +31,7 @@ CREATE TABLE ticket_status(
 CREATE TABLE ticket (
     ticket_id       BIGSERIAL PRIMARY KEY,
     luma_number     CHAR(10) REFERENCES luma_user(luma_number),
-    light_post_id   BIGINT REFERENCES light_post(light_id),
+    street_light_id   BIGINT REFERENCES street_light(light_id),
     status_id       INT REFERENCES ticket_status(status_id),
     created_at      TIMESTAMP DEFAULT NOW(),
     resolved_at     TIMESTAMP
