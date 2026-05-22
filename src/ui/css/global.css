@@ -24,18 +24,18 @@ body {
 }
 
 /* ─ Header ────────────────────────────────── */
-body>.header h2 {
+.page-header h2 {
   color: var(--logo);
   font-weight: 100;
   font-family: fantasy;
 }
 
-body>.header * {
+.page-header * {
   margin: 5px;
 }
 
 /*header with side bar icon, project logo, and user icon*/
-.header {
+.page-header {
   display: flex;
   flex-direction: row;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5),
@@ -44,7 +44,7 @@ body>.header * {
 }
 
 /*user icon*/
-.header .user-icon {
+.page-header .user-icon {
   margin-left: auto;
   cursor: pointer;
   color: #00a0cd;
@@ -52,7 +52,7 @@ body>.header * {
 
 /* ─ Footer ────────────────────────────────── */
 
-body>.footer {
+.page-footer {
   position: fixed;
   right: 15px;
   bottom: 5px;
