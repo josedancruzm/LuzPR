@@ -102,15 +102,24 @@ dialog h2 {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-right: 4px;
+  gap: 8px;
   border-radius: 50%;
+
+  box-shadow: inset 0 -1px 2px rgba(0, 0, 0, 0.2);
 }
 
 .btn-close {
   background-color: var(--close-btn);
-  border: 1px solid red;
+  color: rgb(109, 0, 0);
 }
 
 .btn-report {
   background-color: var(--report-btn);
-  border: 1px solid rgb(255, 208, 0);
+  color: rgb(190, 156, 0);
+}
+
+.icon-circle svg {
+  height: 20px;
+  width: 20px;
 }
