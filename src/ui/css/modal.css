@@ -102,12 +102,12 @@ dialog h2 {
   border-radius: 50%;
 }
 
-.icon-circle .btn-close-circle {
+.btn-close {
   background-color: var(--close-btn);
   border: 1px solid red;
 }
 
-.icon-circle .btn-report-circle {
+.btn-report {
   background-color: var(--report-btn);
   border: 1px solid rgb(255, 208, 0);
 }
