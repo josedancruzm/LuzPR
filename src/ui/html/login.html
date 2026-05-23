@@ -51,24 +51,32 @@
     </div>
 
     <!--contains input boxes and buttons-->
-    <form class="form-box" action="main.html">
+    <form class="form-body" action="main.html">
 
-      <input type="text" id="username" class="input-field" placeholder=" ">
+      <div class="username-group">
+        <p class="username">Username</p>
+
+        <input type="text" id="username" class="input-field" placeholder=" ">
+      </div>
 
       <div class="password-group">
-        <input type="password" id="password" class="input-field" placeholder=" ">
+        <p class="password">Password</p>
+        <div class="password-group-input">
+          <input type="password" id="password" class="input-field" placeholder=" ">
 
-        <!--eye icon toggle-->
-        <div class="eye-icon" onclick="togglePassword()">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-            class="lucide lucide-eye-icon lucide-eye">
-            <path
-              d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0" />
-            <circle cx="12" cy="12" r="3" />
-          </svg>
+          <!--eye icon toggle-->
+          <div class="eye-icon" onclick="togglePassword()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              class="lucide lucide-eye-icon lucide-eye">
+              <path
+                d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0" />
+              <circle cx="12" cy="12" r="3" />
+            </svg>
+          </div>
         </div>
       </div>
+
 
       <!--sign in button-->
       <button type="submit" class="submit">
@@ -81,13 +89,15 @@
       </button>
     </form>
     <!--remember me / forgot password? / language-->
-    <div class="links">
+    <div class="form-footer">
       <div class="forgot">
         <a href="#" class="form-link">Forgot password?</a>
         <a href="#" class="form-link">Forgot username?</a>
       </div>
       <div class="register">
-        <p>New to MiLuzPR? <a href="#" class="form-link"><b>Register here.</b></a></p>
+        <p>New to MiLuzPR?
+          <a href="#" class="form-link"><b>Register here.</b></a>
+        </p>
       </div>
 
 

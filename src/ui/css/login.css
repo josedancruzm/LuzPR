@@ -1,7 +1,3 @@
-* {
-  box-sizing: border-box;
-}
-
 /*contains everything froim the Welcome sign to the Register here link*/
 .form-container {
   position: relative;
@@ -26,17 +22,17 @@
 }
 
 /*contains everything from the username input box to the Register here link*/
-.form-box {
+.form-body {
   display: flex;
   flex-direction: column;
   margin-top: 65px;
   width: auto;
-  gap: 47px;
+  gap: 30px;
 }
 
 .input-field {
   height: 48px;
-  padding-inline: 14px;
+  padding: 0;
   border: 1px solid grey;
   border-radius: 6px;
   width: 100%;
@@ -47,7 +43,17 @@
   border-color: #71bd2a;
 }
 
-.password-group {
+.form-body .username,
+.form-body .password {
+  margin: 0;
+  text-align: left;
+  color: #4e7524;
+  font-weight: bold;
+  font-size: 14px;
+  margin-bottom: 2px;
+}
+
+.password-group-input {
   position: relative;
   display: flex;
 }
