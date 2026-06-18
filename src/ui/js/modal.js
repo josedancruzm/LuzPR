@@ -8,6 +8,10 @@ let activeMarker = null
 //opens report dialog
 function openReportDialog(marker) {
     activeMarker = marker
+
+    const form = document.getElementById("report-form")
+    if (form) form.reset()
+
     reportDialog.showModal()
 }
 
