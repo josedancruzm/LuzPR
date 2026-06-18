@@ -6,7 +6,7 @@ LuzPR is an interactive map that displays the location of every street light in 
 
 ## Problem
 
-One of the many public facilities that face recurring power outages is our street street lights. This can lead to possible accidents and safety concerns. Currently, one can't report a specific street light since it's not affected by a greater outage.
+One of the many public facilities that face recurring power outages is our street lights. This can lead to possible accidents and safety concerns. Currently, one can't report a specific street light since it's not affected by a greater outage.
 
 ## Solution
 
@@ -17,21 +17,12 @@ This project aims to map every street light in Puerto Rico that is under the con
 - **Frontend:** HTML, CSS, JavaScript, Leaflet.js
 - **Backend:** Python, FastAPI
 - **Database:** Neon PostgreSQL
+- **Hosting:** Render
 - **Map Tiles:** MapTiler
-
-## Status
-
-**In development:**
-
->*Street light data incomplete* 
-
->*Reporting system not yet implemented.*
-
->0/78 Municipios Completed
 
 ## Goal
 
-The long-term goal of LuzPR is to be adopted as an official feature of MiLUMA, giving citizens a direct way to report and track faulty street lights in their community. Future improvements could include mobile support, expanding street light coverage beyond what's currently available in public datasets or maps, and reporting coverages of other utilities like traffic lights.
+The long-term goal of LuzPR is to be adopted as a public tool, giving citizens a direct way to report and track faulty street lights in their community. Future improvements could include mobile support, expanding street light coverage beyond what's currently available in public datasets or maps, and reporting coverages of other utilities like traffic lights.
 
 ## Contributers 🏆
 
