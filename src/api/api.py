@@ -8,6 +8,11 @@ import os
 from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
 
+from pathlib import Path
+
+BASE_DIR = Path(__file__).resolve().parent.parent  # points to src/
+UI_DIR = BASE_DIR / "ui"
+
 load_dotenv()
 database_url = os.getenv("DATABASE_URL", "")
 database = Database(database_url)
@@ -28,6 +33,18 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+app.mount("/css", StaticFiles(directory=UI_DIR / "css"), name="css")
+app.mount("/js", StaticFiles(directory=UI_DIR / "js"), name="js")
+app.mount("/assets", StaticFiles(directory=UI_DIR / "assets"), name="assets")
+
+@app.get("/")
+async def serve_main():
+    return FileResponse(UI_DIR / "html" / "main.html")
+
+@app.get("/login")
+async def serve_login():
+    return FileResponse(UI_DIR / "html" / "login.html")
 
 @app.get("/streetlights")
 async def get_streetlights():

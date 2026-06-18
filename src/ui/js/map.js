@@ -22,7 +22,7 @@ var reportedIcon = L.icon({
     popupAnchor: [0, -32]
 });
 
-fetch("http://localhost:8000/streetlights")
+fetch("/streetlights")
     .then(res => res.json())
     .then(data => {
 
