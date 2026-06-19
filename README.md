@@ -35,9 +35,10 @@ The long-term goal of LuzPR is to be adopted as a public tool, giving citizens a
 ### 🥉 Name - # street lights
 >Working on:
 
-## Resources
+## Roadmap
 
-### SVG Icon Library:
->https://lucide.dev/
-
+- [] Add complete reporting system that connects to DB.
+- [] Add history button to see each lightpost's ticket history.
+- [] Add sign up feature
+- [] Seperate reporting feature by user role
 
