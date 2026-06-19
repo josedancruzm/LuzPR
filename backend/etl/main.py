@@ -2,7 +2,7 @@ import geopandas as gpd
 import pandas as pd
 from pathlib import Path
 from pyogrio import list_layers
-from etl.dbconfig import get_connection
+from backend.etl.dbconfig import get_connection
 
 BASE_DIR = Path(__file__).resolve().parent
 DATA_DIR = BASE_DIR / "data"
