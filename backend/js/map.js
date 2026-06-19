@@ -9,14 +9,14 @@ L.tileLayer('https://api.maptiler.com/maps/streets-v4/{z}/{x}/{y}.png?key=KdpEk7
 }).addTo(map);
 
 var defaultIcon = L.icon({
-    iconUrl: '../assets/icons/streetlight_icon_ON.png',
+    iconUrl: '../../frontend/library/streetlight_icon_ON.png',
     iconSize: [32, 32],
     iconAnchor: [16, 32],
     popupAnchor: [0, -32]
 });
 
 var reportedIcon = L.icon({
-    iconUrl: '../assets/icons/streetlight_icon_OFF.png',
+    iconUrl: '../../frontend/library/streetlight_icon_OFF.png',
     iconSize: [32, 32],
     iconAnchor: [16, 32],
     popupAnchor: [0, -32]
