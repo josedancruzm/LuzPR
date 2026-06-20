@@ -53,3 +53,8 @@ async def get_all_streetlights():
 @app.get("/streetlights/city/{city}")
 async def get_streetlight_by_city(city: str):
     return await StreetLightHandler().get_streetlight_by_city(database, city)
+
+# ---------- Ticket Light Endpoints ---------- $
+@app.post("/tickets")
+async def create_ticket():
+    return await TicketHandler().create_ticket(ticket)

@@ -2,7 +2,7 @@ from backend.dao.streetlight_dao import StreetLightDAO
 
 class StreetLightHandler:
 
-    async def get_all_streetlights(slef, database):
+    async def get_all_streetlights(self, database):
         return await StreetLightDAO().get_all_streetlights(database)
     
     async def get_streetlight_by_city(self, database, city):
