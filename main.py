@@ -3,14 +3,12 @@ from databases import Database
 from fastapi.middleware.cors import CORSMiddleware
 from dotenv import load_dotenv
 from contextlib import asynccontextmanager
+from fastapi.responses import FileResponse
+from pathlib import Path
+from backend.handler.streetlight_handler import StreetLightHandler
 import os
 
-from fastapi.responses import FileResponse
-from fastapi.staticfiles import StaticFiles
-
-from pathlib import Path
-
-BASE_DIR = Path(__file__).resolve().parent  # points to src/
+BASE_DIR = Path(__file__).resolve().parent
 UI_DIR = BASE_DIR / "ui"
 
 load_dotenv()
@@ -34,10 +32,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# app.mount("/css", StaticFiles(directory=UI_DIR / "css"), name="css")
-# app.mount("/js", StaticFiles(directory=UI_DIR / "js"), name="js")
-# app.mount("/assets", StaticFiles(directory=UI_DIR / "assets"), name="assets")
-
+# ---------- Web Page Endpoints ---------- $
 @app.get("/")
 async def serve_main():
     return FileResponse(UI_DIR / "html" / "main.html")
@@ -46,22 +41,15 @@ async def serve_main():
 async def serve_login():
     return FileResponse(UI_DIR / "html" / "login.html")
 
+
+# ---------- Street Light Endpoints ---------- $
+
+# get all street lights
 @app.get("/streetlights")
-async def get_streetlights():
-    query = """
-    SELECT light_id, latitude, longitude, city
-    FROM street_light
-    """
+async def get_all_streetlights():
+    return await StreetLightHandler().get_all_streetlights(database)
 
-    rows = await database.fetch_all(query)
-    return [dict(row) for row in rows]
-
+# get street light by id
 @app.get("/streetlights/city/{city}")
 async def get_streetlight_by_city(city: str):
-    query = """
-    SELECT light_id, latitude, longitude, city
-    FROM street_light
-    WHERE city = :city"""
-
-    rows = await database.fetch_all(query,values={"city":city})
-    return [dict(row) for row in rows]
+    return await StreetLightHandler().get_streetlight_by_city(database, city)
