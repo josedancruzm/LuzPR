@@ -37,7 +37,7 @@ The long-term goal of LuzPR is to be adopted as a public tool, giving citizens a
 
 ## Roadmap
 
-- [] Add complete reporting system that connects to DB.
+- [x] Add complete reporting system that connects to DB. _(Completed on January 23, 2026)_
 - [] Add history button to see each lightpost's ticket history.
 - [] Add sign up feature
 - [] Seperate reporting feature by user role

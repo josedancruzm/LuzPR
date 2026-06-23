@@ -34,7 +34,7 @@ CREATE TABLE ticket (
     light_id        BIGINT REFERENCES street_light(light_id),
     detail          CHAR(25),
     status_id       INT REFERENCES ticket_status(status_id),
-    created_at      TIMESTAMP DEFAULT NOW(),
+    created_at      TIMESTAMPTZ DEFAULT NOW(),
     resolved_at     TIMESTAMP
 );
 

@@ -2,7 +2,6 @@
 const reportDialog = document.getElementById("report-dialog")
 const receiptDialog = document.getElementById("receipt-dialog")
 const detailsDialog = document.getElementById("details-dialog")
-
 let activeMarker = null
 // let signedIn = false;
 
@@ -10,8 +9,16 @@ let activeMarker = null
 /* --------------- Modal Functions --------------- */
 
 // modal openers
-function openReportDialog(marker) {
+function openDetailsDialog(marker) {
     activeMarker = marker
+    document.getElementById("detail-id").textContent = marker.light_id;
+    document.getElementById("detail-coords").textContent = `${marker.longitude}, ${marker.latitude}`;
+    document.getElementById("detail-city").textContent = marker.city;
+    detailsDialog.showModal();
+    
+}
+
+function openReportDialog() {
 
     const form = document.getElementById("report-form")
     if (form) form.reset()
@@ -19,8 +26,40 @@ function openReportDialog(marker) {
     reportDialog.showModal()
 }
 
-function openDetailsDialog() {
-    detailsDialog.showModal()
+function submitReportForm(){
+
+    const checked = document.querySelector('input[name="reason"]:checked')
+
+    if (checked == null){
+        alert("Please select an issue.")
+        return
+    }
+
+    let reason = checked.value
+
+    if (reason === "other") {
+
+        let detail = document.getElementById("other-reason").value
+
+        if (detail.trim() == "") {
+            alert("Please specify the issue.")
+            return
+        }
+        reason = detail
+    }
+
+    //fetch("/tickets", {
+    fetch("http://localhost:8000/tickets", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },        
+        body: JSON.stringify({
+            light_id: activeMarker.light_id,
+            detail: reason,
+            status_id: 1,
+        })
+    })
+    closeReportDialog()
+    closeDetailsDialog()
 }
 
 // modal closers
@@ -45,27 +84,6 @@ function addClickOutsideToClose(dialog) {
     })
 }
 
-function submitReportForm(){
-    const checked = document.querySelectorAll('input[type="radio"]:checked')
-
-    // if (signedIn == false) {
-    //     alert("Please sign in to file a report.")
-    //     return
-    // }
-    if (checked.length == 0){
-        alert("Please select an issue.")
-        return
-    } 
-    closeReportDialog()    
-}
-
 addClickOutsideToClose(reportDialog)
 addClickOutsideToClose(receiptDialog)
 addClickOutsideToClose(detailsDialog)
-
-function openDetailsDialog(row) {
-    document.getElementById("detail-id").textContent = row.light_id;
-    document.getElementById("detail-coords").textContent = `${row.longitude}, ${row.latitude}`;
-    document.getElementById("detail-city").textContent = row.city;
-    detailsDialog.showModal();
-}
