@@ -105,16 +105,16 @@
             <form id="report-form">
                 <fieldset>
                     <legend>What's the issue?</legend>
-                    <label><input type="checkbox" name="reason" value="out"> Light is out / broken</label>
-                    <label><input type="checkbox" name="reason" value="flickering"> Light is flickering</label>
-                    <label><input type="checkbox" name="reason" value="damaged"> Damaged pole / fixture</label>
-                    <label><input type="checkbox" name="reason" value="other"> Other <input type="text"></label>
+                    <label><input type="radio" name="reason"> Light is out / broken</label>
+                    <label><input type="radio" name="reason"> Light is flickering</label>
+                    <label><input type="radio" name="reason"> Damaged pole / fixture</label>
+                    <label><input type="radio" name="reason"> Other <input type="text"></label>
                 </fieldset>
             </form>
         </div>
 
         <div class="footer">
-            <div class="icon-circle btn-submit" title="Submit" onclick="incompleteReportForm()" type="button">
+            <div class="icon-circle btn-submit" title="Submit" onclick="submitReportForm()" type="button">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                     class="lucide lucide-send-icon lucide-send">

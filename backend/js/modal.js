@@ -4,7 +4,7 @@ const receiptDialog = document.getElementById("receipt-dialog")
 const detailsDialog = document.getElementById("details-dialog")
 
 let activeMarker = null
-let signedIn = false;
+// let signedIn = false;
 
 
 /* --------------- Modal Functions --------------- */
@@ -45,18 +45,18 @@ function addClickOutsideToClose(dialog) {
     })
 }
 
-function incompleteReportForm(){
-    form = document.querySelectorAll('input[type="checkbox"]:checked')
+function submitReportForm(){
+    const checked = document.querySelectorAll('input[type="radio"]:checked')
 
-    if (signedIn == false) {
-        alert("Please sign in to file a report.")
-        return
-    }
-    if (form.length == 0){
+    // if (signedIn == false) {
+    //     alert("Please sign in to file a report.")
+    //     return
+    // }
+    if (checked.length == 0){
         alert("Please select an issue.")
         return
     } 
-    closeReportDialog()
+    closeReportDialog()    
 }
 
 addClickOutsideToClose(reportDialog)
