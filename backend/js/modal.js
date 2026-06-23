@@ -1,11 +1,15 @@
-//function declaration to create modal(s)
+// Objects
 const reportDialog = document.getElementById("report-dialog")
 const receiptDialog = document.getElementById("receipt-dialog")
 const detailsDialog = document.getElementById("details-dialog")
 
 let activeMarker = null
+let signedIn = false;
 
-//opens report dialog
+
+/* --------------- Modal Functions --------------- */
+
+// modal openers
 function openReportDialog(marker) {
     activeMarker = marker
 
@@ -15,17 +19,17 @@ function openReportDialog(marker) {
     reportDialog.showModal()
 }
 
-//closes report dialog
+function openDetailsDialog() {
+    detailsDialog.showModal()
+}
+
+// modal closers
 function closeReportDialog() {
     reportDialog.close()
 }
 
 function closeReceiptDialog() {
     receiptDialog.close()
-}
-
-function openDetailsDialog() {
-    detailsDialog.showModal()
 }
 
 function closeDetailsDialog() {
@@ -39,6 +43,20 @@ function addClickOutsideToClose(dialog) {
         if (e.clientX < rect.left || e.clientX > rect.right || e.clientY < rect.top || e.clientY > rect.bottom)
             dialog.close()
     })
+}
+
+function incompleteReportForm(){
+    form = document.querySelectorAll('input[type="checkbox"]:checked')
+
+    if (signedIn == false) {
+        alert("Please sign in to file a report.")
+        return
+    }
+    if (form.length == 0){
+        alert("Please select an issue.")
+        return
+    } 
+    closeReportDialog()
 }
 
 addClickOutsideToClose(reportDialog)

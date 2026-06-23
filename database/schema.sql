@@ -31,7 +31,8 @@ CREATE TABLE ticket_status(
 CREATE TABLE ticket (
     ticket_id       BIGSERIAL PRIMARY KEY,
     luma_number     CHAR(10) REFERENCES luma_user(luma_number),
-    street_light_id   BIGINT REFERENCES street_light(light_id),
+    light_id        BIGINT REFERENCES street_light(light_id),
+    detail          CHAR(25),
     status_id       INT REFERENCES ticket_status(status_id),
     created_at      TIMESTAMP DEFAULT NOW(),
     resolved_at     TIMESTAMP
