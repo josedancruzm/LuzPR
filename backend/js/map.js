@@ -21,8 +21,8 @@ var reportedIcon = L.icon({
     iconAnchor: [16, 32],
     popupAnchor: [0, -32]
 });
-// fetch("http://localhost:8000/streetlights") //for local resting
-fetch("/streetlights") // for pushing to cloud
+fetch("http://localhost:8000/streetlights") //for local resting
+// fetch("/streetlights") // for pushing to cloud
     .then(res => res.json())
     .then(data => {
 
