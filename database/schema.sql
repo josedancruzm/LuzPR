@@ -18,6 +18,7 @@ CREATE TABLE traffic_light (
 
 CREATE TABLE luma_user(
     luma_number     CHAR(10) PRIMARY KEY,
+    username        TEXT,
     first_name      TEXT,
     last_name       TEXT,
     user_ssn        CHAR(4)

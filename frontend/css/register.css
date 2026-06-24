@@ -1,0 +1,108 @@
+/*contains everything froim the Welcome sign to the Register here link*/
+.form-container {
+  position: relative;
+  background-color: var(--white);
+  width: 400px;
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 40px;
+}
+
+/*Welcome to MiLuzPR text*/
+.form-header .welcome {
+  margin-top: 60px;
+  color: #4e7524;
+  font-weight: 800;
+}
+
+/*Sign in text*/
+.form-header .sign-in {
+  font-size: 32px;
+  margin-top: 20px;
+}
+
+/*contains everything from the username input box to the Register here link*/
+.form-body {
+  display: flex;
+  flex-direction: column;
+  margin-top: 65px;
+  width: auto;
+  gap: 30px;
+}
+
+.input-field {
+  height: 48px;
+  box-sizing: border-box;
+  padding-inline: 14px;
+  border: 1px solid grey;
+  border-radius: 6px;
+  width: 100%;
+  outline: none;
+}
+
+.input-field:focus {
+  border-color: #71bd2a;
+}
+
+.double-group{
+  display: flex;
+  flex-direction: row;
+  gap: 18px;
+}
+.form-body * {
+  margin: 0;
+  text-align: left;
+  color: #4e7524;
+  font-weight: bold;
+  font-size: 14px;
+  margin-bottom: 2px;
+}
+
+.password-group-input {
+  position: relative;
+  display: flex;
+}
+
+.eye-icon {
+  position: absolute;
+  right: 15px;
+  display: flex;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  color: grey;
+}
+
+.form-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+
+/*sign in button*/
+.submit {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  height: 47px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: #17214c;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  transition: background-color .3s ease;
+  width: 100%;
+}
+
+/*register link*/
+.register {
+  text-align: center;
+  margin-top: 45px;
+  color: var(--link);
+  font-size: 14px;
+}
