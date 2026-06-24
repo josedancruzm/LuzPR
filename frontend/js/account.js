@@ -1,3 +1,5 @@
+account = false
+
 function togglePassword() {
       const passwordInput = document.getElementById("password")
       const eyeIcon = document.querySelector(".eye-icon")
@@ -13,4 +15,25 @@ function togglePassword() {
 
 function openRegisterPage(){
     window.location.href = "register.html"
+}
+
+function openMainPage(){
+    window.location.href = "main.html"
+}
+
+document.getElementById("login-form").addEventListener("submit", signInChecker)
+
+function signInChecker(e){
+  e.preventDefault()
+  const login_username =  document.getElementById("login-username").value
+  const login_password = document.getElementById("login-password").value
+
+
+  // checks if the input boxes are empty
+  if (login_username === "" || login_password === "") {
+    alert("Please enter your account's credentials to sign in.")
+    return
+  }
+
+  openMainPage()
 }
