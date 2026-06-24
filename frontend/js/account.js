@@ -1,5 +1,10 @@
 account = false
+const loginForm = document.getElementById("login-form")
+if (loginForm) loginForm.addEventListener("submit", signInChecker)
 
+const registerForm = document.getElementById("register-form")
+if (registerForm) registerForm.addEventListener("submit", registerChecker)
+  
 function togglePassword() {
       const passwordInput = document.getElementById("password")
       const eyeIcon = document.querySelector(".eye-icon")
@@ -21,7 +26,9 @@ function openMainPage(){
     window.location.href = "main.html"
 }
 
-document.getElementById("login-form").addEventListener("submit", signInChecker)
+function openLogInPage(){
+    window.location.href = "login.html"
+}
 
 function signInChecker(e){
   e.preventDefault()
@@ -36,4 +43,26 @@ function signInChecker(e){
   }
 
   openMainPage()
+}
+
+function registerChecker(e){
+  e.preventDefault()
+
+  const register_fname = document.getElementById("register-fname").value
+  const register_lname = document.getElementById("register-lname").value
+  const register_luma = document.getElementById("register-luma-number").value
+  const register_ssn = document.getElementById("register-ssn").value
+  const register_username = document.getElementById("register-username").value
+  const register_password = document.getElementById("register-password").value
+
+  let details = [register_fname, register_lname, register_luma, register_ssn, register_username, register_password]
+
+  for (const element of details){
+    if (element === ""){
+      alert("Please fill in all input fields.")
+      return
+    }
+  }
+
+  openLogInPage()
 }

@@ -51,40 +51,40 @@
     </div>
 
     <!--contains input boxes and buttons-->
-    <form class="form-body" action="main.html">
+    <form class="form-body" id="register-form">
 
       <div class="double-group">
         <div class="fname-group">
           <p class="fname">First Name</p>
-          <input type="text" id="fname" class="input-field" placeholder=" ">
+          <input type="text" id="register-fname" class="input-field" placeholder=" ">
         </div>
         <div class="lname-group">
           <p class="fname">Last Name</p>
-          <input type="text" id="lname" class="input-field" placeholder=" ">
+          <input type="text" id="register-lname" class="input-field" placeholder=" ">
         </div>
       </div>
 
       <div class="double-group">
         <div class="luma-group">
           <p class="luma-number">Luma Number</p>
-          <input type="text" id="luma-number" class="input-field" placeholder=" ">
+          <input type="text" id="register-luma-number" class="input-field" placeholder=" ">
         </div>
         <div class="ssn-group">
-          <p class="ssn">Last 4 Digits - SNN</p>
-          <input type="text" id="lname" class="input-field" placeholder=" ">
+          <p class="ssn">Last 4 Digits - SSN</p>
+          <input type="text" id="register-ssn" class="input-field" placeholder=" ">
         </div>
       </div>
 
       <div class="username-group">
         <p class="username">Username</p>
 
-        <input type="text" id="username" class="input-field" placeholder=" ">
+        <input type="text" id="register-username" class="input-field" placeholder=" ">
       </div>
 
       <div class="password-group">
         <p class="password">Password</p>
         <div class="password-group-input">
-          <input type="password" id="password" class="input-field" placeholder=" ">
+          <input type="password" id="register-password" class="input-field" placeholder=" ">
 
           <!--eye icon toggle-->
           <div class="eye-icon" onclick="togglePassword()">
@@ -99,7 +99,7 @@
         </div>
       </div>
 
-      <!--sign in button-->
+      <!--finish register button-->
       <button type="submit" class="submit">
         Finish register
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
@@ -110,9 +110,6 @@
       </button>
     </form>
 
-    <div class="form-footer">
-
-    </div>
   </div>
 
   <div class="page-footer">
