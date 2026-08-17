@@ -33,8 +33,11 @@ dialog .footer {
   overflow: hidden;
 }
 
+/* BUTTON CONFIGURATIONS
+
+
 /*size parameters of surrounding circle button*/
-.icon-circle {
+.btn-frame {
   height: 22px;
   width: 22px;
   display: flex;
@@ -45,11 +48,6 @@ dialog .footer {
   border-radius: 50%;
   overflow: hidden;
   box-shadow: inset 0 -1px 2px rgba(0, 0, 0, 0.2);
-}
-
-.icon-circle svg {
-  height: 22px;
-  width: 22px;
 }
 
 .btn-close {
