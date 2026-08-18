@@ -23,21 +23,29 @@ body {
   background-color: var(--white);
 }
 
-/* ─ Header ────────────────────────────────── */
-.page-header h2 {
-  color: var(--logo);
-  font-weight: 100;
-  font-family: fantasy;
-}
-
-.page-header * {
-  margin: 5px;
-}
-
-/*header with side bar icon, project logo, and user icon*/
+/* Header Blip */
 .page-header {
+
+  /* positioning */
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  z-index: 9999;
+
+  /* shaping */
+  width: 120px;
+  height: 50px;
+  border-radius: 100px;
+  gap: 30px;
+
+  /* alignment */
+  justify-content: center;
+  align-items: center;
   display: flex;
   flex-direction: row;
+
+  /* coloring */
+  background: #ffffff;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5),
     inset 0 2px 0 rgba(255, 255, 255, 0.15),
     inset 0 -2px 4px rgba(0, 0, 0, 0.2);
@@ -45,18 +53,6 @@ body {
 
 /*user icon*/
 .page-header .user-icon {
-  margin-left: auto;
   cursor: pointer;
   color: #00a0cd;
-}
-
-/* ─ Footer ────────────────────────────────── */
-
-.page-footer {
-  position: fixed;
-  right: 15px;
-  bottom: 5px;
-  display: flex;
-  cursor: pointer;
-  color: var(--icon);
 }
