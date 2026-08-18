@@ -14,6 +14,7 @@ function openDetailsDialog(marker) {
     document.getElementById("detail-id").textContent = marker.light_id;
     document.getElementById("detail-coords").textContent = `${marker.longitude}, ${marker.latitude}`;
     document.getElementById("detail-city").textContent = marker.city;
+    detailsDialog.classList.add("modal-slider")
     detailsDialog.showModal();
     
 }
@@ -73,6 +74,8 @@ function closeReceiptDialog() {
 
 function closeDetailsDialog() {
     detailsDialog.close()
+        detailsDialog.classList.remove("modal-slider")
+
 }
 
 //when you click outside of the modal, close the modal

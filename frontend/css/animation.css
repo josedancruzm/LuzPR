@@ -1,0 +1,17 @@
+@keyframes modal-slider {
+    0% {
+        transform: translateX(-100vw);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.modal-slider {
+    /*animation*/
+    animation-duration: 0.50s;
+    animation-name: modal-slider;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+}
