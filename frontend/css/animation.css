@@ -1,16 +1,23 @@
 @keyframes modal-slider {
     0% {
-        transform: translateX(-100vw);
+        scale: 0.7;
+        opacity: 0;
+    }
+
+    50% {
+        scale: 1.15;
+        opacity: 0.75;
     }
 
     100% {
-        transform: translateX(0);
+        scale: 1;
+        opacity: 1;
     }
 }
 
 .modal-slider {
     /*animation*/
-    animation-duration: 0.50s;
+    animation-duration: 0.30s;
     animation-name: modal-slider;
     animation-timing-function: ease-out;
     animation-fill-mode: forwards;
