@@ -67,7 +67,7 @@
     <!-- Modal Section --------------------------------------------------------------------->
 
     <!--modal for street light details-->
-    <dialog id="details-dialog">
+    <dialog id="modal">
         <div class="header">
 
             <!--report flag-->
@@ -92,54 +92,44 @@
         </div>
 
         <div class="body">
-            <b>ID:</b> <span id="detail-id"></span><br><br>
-            <b>City:</b> <span id="detail-city"></span><br><br>
-            <b>Coordinates:</b> <span id="detail-coords"></span><br>
+            <div class="modal-details" id="modal-details">
+                <b>ID:</b> <span id="detail-id"></span><br><br>
+                <b>City:</b> <span id="detail-city"></span><br><br>
+                <b>Coordinates:</b> <span id="detail-coords"></span><br>
 
-        </div>
-    </dialog>
+            </div>
 
-    <!--modal for reporting-->
-    <dialog id="report-dialog">
-        <div class="header">
-            <!--x close-->
-            <div class="btn-frame btn-close" title="Close" onclick="closeReportDialog()" type="button">
+            <!--modal for reporting-->
+            <div class="modal-report" id="modal-report">
+                <form id="report-form">
+                    <fieldset>
+                        <legend>What's the issue?</legend>
+                        <label><input type="radio" name="reason" value="out"> Light is out / broken</label>
+                        <label><input type="radio" name="reason" value="flickering"> Light is flickering</label>
+                        <label><input type="radio" name="reason" value="damaged"> Damaged pole / fixture</label>
+                        <label><input type="radio" name="reason" value="other"> Other <input type="text"
+                                id="other-reason"></label>
+                    </fieldset>
+                </form>
 
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                    class="lucide lucide-x-icon lucide-x">
-                    <path d="M18 6 6 18" />
-                    <path d="m6 6 12 12" />
-                </svg>
+            </div>
+
+            <div class="footer">
+                <div class="btn-frame btn-submit" title="Submit" onclick="submitReportForm()" type="button">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="lucide lucide-send-icon lucide-send">
+                        <path
+                            d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z" />
+                        <path d="m21.854 2.147-10.94 10.939" />
+                    </svg>
+                </div>
             </div>
         </div>
 
-        <div class="body">
-            <h2>Report Form</h2>
-            <form id="report-form">
-                <fieldset>
-                    <legend>What's the issue?</legend>
-                    <label><input type="radio" name="reason" value="out"> Light is out / broken</label>
-                    <label><input type="radio" name="reason" value="flickering"> Light is flickering</label>
-                    <label><input type="radio" name="reason" value="damaged"> Damaged pole / fixture</label>
-                    <label><input type="radio" name="reason" value="other"> Other <input type="text"
-                            id="other-reason"></label>
-                </fieldset>
-            </form>
-        </div>
-
-        <div class="footer">
-            <div class="btn-frame btn-submit" title="Submit" onclick="submitReportForm()" type="button">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                    class="lucide lucide-send-icon lucide-send">
-                    <path
-                        d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z" />
-                    <path d="m21.854 2.147-10.94 10.939" />
-                </svg>
-            </div>
-        </div>
     </dialog>
+
+
 
     <!--modal for receipt-->
     <dialog id="receipt-dialog">

@@ -1,22 +1,24 @@
 // Objects
-const reportDialog = document.getElementById("report-dialog")
-const receiptDialog = document.getElementById("receipt-dialog")
-const detailsDialog = document.getElementById("details-dialog")
+const modal = document.getElementById("modal")
+const modalDetails = document.getElementById("modal-details")
+const modalReport = document.getElementById("modal-report")
+
 let activeMarker = null
-// let signedIn = false;
-
-
-/* --------------- Modal Functions --------------- */
 
 // modal openers
 function openDetailsDialog(marker) {
     activeMarker = marker
+
+    // animation
+    modal.classList.add("modal-slider")
+
+    // details of selected marker
     document.getElementById("detail-id").textContent = marker.light_id;
     document.getElementById("detail-coords").textContent = `${marker.longitude}, ${marker.latitude}`;
     document.getElementById("detail-city").textContent = marker.city;
-    detailsDialog.classList.add("modal-slider")
-    detailsDialog.showModal();
     
+    // finally, show modal
+    modal.showModal();
 }
 
 function openCreateBlip() {
@@ -24,11 +26,11 @@ function openCreateBlip() {
 }
 
 function openReportDialog() {
+    modalReport.style.display = "flex";
+    modalDetails.style.display = "none";
 
     const form = document.getElementById("report-form")
     if (form) form.reset()
-
-    reportDialog.showModal()
 }
 
 function submitReportForm(){
@@ -69,16 +71,16 @@ function submitReportForm(){
 
 // modal closers
 function closeReportDialog() {
-    reportDialog.close()
-}
-
-function closeReceiptDialog() {
-    receiptDialog.close()
+    modalReport.style.display = "none";
+    modalDetails.style.display = "block";
+    modal.close()
 }
 
 function closeDetailsDialog() {
-    detailsDialog.close()
-    detailsDialog.classList.remove("modal-slider")
+    modal.close()
+    modalReport.style.display = "none";
+    modalDetails.style.display = "block";
+    modal.classList.remove("modal-slider")
 
 }
 
@@ -91,9 +93,7 @@ function addClickOutsideToClose(dialog) {
     })
 }
 
-addClickOutsideToClose(reportDialog)
-addClickOutsideToClose(receiptDialog)
-addClickOutsideToClose(detailsDialog)
+addClickOutsideToClose(modal)
 
 function openLogInPage(){
     window.location.href = "login.html"

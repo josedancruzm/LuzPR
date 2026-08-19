@@ -1,12 +1,19 @@
-/* ─ Universal Modal Configuration ────────────────────────────────── */
+/* Universal Modal Configuration */
+
 dialog {
+  /* shaping */
+  width: 300px;
+  border-radius: 12px;
+  padding: 0;
+  border: none;
+
+  /* positioning */
+  position: relative;
+
+  /* coloring */
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5),
     inset 0 2px 0 rgba(255, 255, 255, 0.15),
     inset 0 -2px 4px rgba(0, 0, 0, 0.2);
-  border-radius: 12px;
-  border: none;
-  position: relative;
-  padding: 0;
 }
 
 dialog .header {
@@ -25,7 +32,7 @@ dialog .body {
 }
 
 dialog .footer {
-  display: flex;
+  display: none;
   flex-direction: row;
   justify-content: right;
   align-items: center;
@@ -79,53 +86,38 @@ dialog .footer {
 
 /* ─ Report Configuration ────────────────────────────────── */
 
-
 /*header in report modal ("Report Form)*/
-dialog h2 {
-  text-align: center;
-  margin: 0;
+.modal-report {
+  display: none;
 }
 
 /*customizes the surroundings of the check marks*/
-#report-dialog fieldset {
+#modal-report fieldset {
   border: 1px solid #ccc;
   border-radius: 8px;
   padding: 10px 16px;
   margin: 12px 0;
 }
 
-#report-dialog legend {
+#modal-report legend {
   font-size: 0.85rem;
   color: #555;
   padding: 0 4px;
 }
 
 /*customizes check-box markers*/
-#report-dialog fieldset label {
+#modal-report fieldset label {
   display: block;
   margin: 8px 0;
   cursor: pointer;
   font-size: 0.95rem;
 }
 
-#report-dialog fieldset input {
+#modal-report fieldset input {
   margin-right: 8px;
   accent-color: #2b5300;
 }
 
-#report-dialog .body {
+#modal-report .body {
   padding-bottom: 0px;
 }
-
-
-
-/* ─ Receipt Configuration ────────────────────────────────── */
-#receipt-dialog h3 {
-  font-weight: bold;
-  margin-left: 10px;
-  text-align: center;
-  margin: 10px;
-}
-
-
-/* ─ Details Configuration ────────────────────────────────── */
