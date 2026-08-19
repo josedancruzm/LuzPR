@@ -19,6 +19,10 @@ function openDetailsDialog(marker) {
     
 }
 
+function openCreateBlip() {
+    document.querySelector('.create-blip-tray').classList.add('create-blip-clicked')
+}
+
 function openReportDialog() {
 
     const form = document.getElementById("report-form")
@@ -74,7 +78,7 @@ function closeReceiptDialog() {
 
 function closeDetailsDialog() {
     detailsDialog.close()
-        detailsDialog.classList.remove("modal-slider")
+    detailsDialog.classList.remove("modal-slider")
 
 }
 

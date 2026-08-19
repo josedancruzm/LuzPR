@@ -4,7 +4,7 @@
         opacity: 0;
     }
 
-    50% {
+    60% {
         scale: 1.15;
         opacity: 0.75;
     }
@@ -19,6 +19,29 @@
     /*animation*/
     animation-duration: 0.30s;
     animation-name: modal-slider;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+}
+
+@keyframes create-blip-clicked {
+
+    0% {
+        height: 50px;
+    }
+
+    60% {
+        height: 220px;
+    }
+
+    100% {
+        height: 200px;
+    }
+}
+
+.create-blip-clicked {
+    /*animation*/
+    animation-duration: 0.30s;
+    animation-name: create-blip-clicked;
     animation-timing-function: ease-out;
     animation-fill-mode: forwards;
 }
